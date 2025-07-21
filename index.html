@@ -1,63 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Project Cards Test</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-        .projects-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .project-card {
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            padding: 20px;
-            width: 300px;
-        }
-        .project-title {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-        
-        .project-desc {
-            color: #555;
-            margin-bottom: 15px;
-        }
-        .project-link {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .project-link:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1nn's Projects</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <h1>My Projects (Test)</h1>
-    <div class="projects-container">
-        <div class="project-card">
-            <div class="project-title">Project One</div>
-            <div class="project-desc">A brief description of Project One.</div>
-            <a class="project-link" href="#">View Project</a>
-        </div>
-        <div class="project-card">
-            <div class="project-title">Project Two</div>
-            <div class="project-desc">A brief description of Project Two.</div>
-            <a class="project-link" href="#">View Project</a>
-        </div>
-        <div class="project-card">
-            <div class="project-title">Project Three</div>
-            <div class="project-desc">A brief description of Project Three.</div>
-            <a class="project-link" href="#">View Project</a>
-        </div>
-    </div>
+    <header>
+        <h1>F1nn's Project Portfolio</h1>
+        <p>Explore detailed insights into each game and invention created by F1nn, including collaborators, roles, time
+            spent, and unique challenges.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#magnet-madness">Magnet Madness</a></li>
+            <li><a href="#timber-trials">Timber Trials</a></li>
+            <li><a href="#psan">Please Suggest A Name</a></li>
+            <li><a href="#window-walker">Window Walker</a></li>
+            <li><a href="#fisherman-storm">Fisherman's Storm</a></li>
+            <li><a href="#one-in-ten-dentist">One In Ten Dentist</a></li>
+            <li><a href="#cube-madness">Cube Madness</a></li>
+            <li><a href="#loopdrive">LoopDrive</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="magnet-madness" class="project-detail">
+            <h2>Magnet Madness</h2>
+            <p><strong>Description:</strong> A refined magnetism-based puzzle game for Android, successor to "Please
+                Suggest A Name".</p>
+            <p><strong>Duration:</strong> 3 months</p>
+            <p><strong>Collaborators:</strong> Solo project</p>
+            <p><strong>Tools:</strong> Unity, C#, Android Studio</p>
+            <p><strong>Challenges:</strong> Mobile optimization, Play Store deployment</p>
+            <a href="https://play.google.com/store/apps/details?id=com.F1nndegamer.MagnetMadness" class="btn">Play on
+                Google Play</a>
+        </section>
+
+        <section id="timber-trials" class="project-detail">
+            <h2>Timber Trials</h2>
+            <p><strong>Description:</strong> A chaotic lumberjack multiplayer game made in a team of 5 for a game jam.
+            </p>
+            <p><strong>Duration:</strong> 7 days (jam)</p>
+            <p><strong>Collaborators:</strong> F1nn (programming, design), Ramixang, Youri, and 2 later additions</p>
+            <p><strong>Tools:</strong> Unity, GitHub</p>
+            <p><strong>Challenges:</strong> Changing scope, coordinating during school</p>
+            <a href="https://f1nndegamer.itch.io/jacklumber" class="btn">Play It</a>
+        </section>
+
+        <section id="psan" class="project-detail">
+            <h2>Please Suggest A Name</h2>
+            <p><strong>Description:</strong> A humorous, chaotic jam game built around unpredictable magnetism
+                mechanics.</p>
+            <p><strong>Duration:</strong> 74 hours (Winter Melon Jam 2024)</p>
+            <p><strong>Collaborators:</strong> F1nn, Alimad, Xender, Youri</p>
+            <p><strong>Tools:</strong> Unity, Aseprite</p>
+            <p><strong>Fun Fact:</strong> The origin point for the concept of Magnet Madness</p>
+            <a href="https://alimad.itch.io/wmj24" class="btn">Play It</a>
+        </section>
+
+        <section id="window-walker" class="project-detail">
+            <h2>Window Walker</h2>
+            <p><strong>Description:</strong> A stealthy movement puzzle game made for GMTK 2024.</p>
+            <p><strong>Duration:</strong> 4 days (jam)</p>
+            <p><strong>Collaborators:</strong> F1nn (team leader), Alimad, Emre, Jack, and 4 others</p>
+            <p><strong>Skills Used:</strong> Leadership, Git collaboration, UI/UX</p>
+            <p><strong>Challenges:</strong> Managing an 8-person team on a deadline</p>
+            <a href="https://f1nndegamer.itch.io/window-walker" class="btn">Play It</a>
+        </section>
+
+        <section id="fisherman-storm" class="project-detail">
+            <h2>Fisherman's Storm</h2>
+            <p><strong>Description:</strong> Arcade-style boat survival game made during Brackeys Jam 2024.</p>
+            <p><strong>Duration:</strong> 7 days (jam)</p>
+            <p><strong>Collaborators:</strong> Same core team from Window Walker</p>
+            <p><strong>Tools:</strong> Unity, Git</p>
+            <p><strong>Improvements:</strong> Better planning based on past jams</p>
+            <a href="https://ramixang.itch.io/fishermans-storm" class="btn">Play It</a>
+        </section>
+
+        <section id="one-in-ten-dentist" class="project-detail">
+            <h2>One In Ten Dentist</h2>
+            <p><strong>Description:</strong> A quirky jam game developed with a Turkish team under time zone pressure.
+            </p>
+            <p><strong>Duration:</strong> 3 days</p>
+            <p><strong>Collaborators:</strong> Aslanemre, Emre, and team</p>
+            <p><strong>Challenges:</strong> Time zone difference, language barriers, async communication</p>
+            <p><strong>Outcome:</strong> A funny and memorable experience with unexpected fun</p>
+            <a href="https://aslanemre.itch.io/one-in-ten-dentist" class="btn">Play It</a>
+        </section>
+
+        <section id="cube-madness" class="project-detail">
+            <h2>Cube Madness</h2>
+            <p><strong>Description:</strong> A physics-based cube shooter prototype. Still in the early concept phase.
+            </p>
+            <p><strong>Status:</strong> Early prototype (public testing)</p>
+            <p><strong>Plans:</strong> Add levels, progression, improved physics, potential Steam release</p>
+            <a href="https://f1nndegamer.itch.io/cube-madness" class="btn">Try the Prototype</a>
+        </section>
+
+        <section id="loopdrive" class="project-detail">
+            <h2>LoopDrive</h2>
+            <p><strong>Description:</strong> A ring-shaped wearable USB flash drive. Designed with a circular connector
+                and 3D-printed prototypes.</p>
+            <p><strong>Development Time:</strong> Ongoing</p>
+            <p><strong>Collaborators:</strong> Solo + feedback from tech and design community</p>
+            <p><strong>Technologies:</strong> CAD, 3D Printing, USB electronics</p>
+            <p><strong>Goals:</strong> Crowdfunding, open-source hardware, reliable docking system</p>
+            <p><strong>Current Stage:</strong> Prototyping, design refinement, marketing prep</p>
+            <a href="#" class="btn">More Info Coming Soon</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 F1nn. All rights reserved.</p>
+    </footer>
 </body>
+
 </html>
