@@ -1,137 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F1nn's Projects</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background-color: #111;
-            color: #fff;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        main {
-            padding: 2rem;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        .project-summary {
-            background: #fff;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            border-radius: 8px;
-            cursor: pointer;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-            transition: background 0.2s;
-        }
-
-        .project-summary:hover {
-            background: #f0f0f0;
-        }
-
-        .project-detail {
-            display: none;
-            background: #fff;
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .project-detail.active {
-            display: block;
-        }
-
-        .project-detail h2 {
-            color: #2c3e50;
-            margin-top: 0;
-        }
-
-        .project-detail ul {
-            padding-left: 1.2rem;
-            margin-top: 0.5rem;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 1rem;
-            background: #3498db;
-            color: white;
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background: #2980b9;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #222;
-            color: #aaa;
-        }
-
-        @media (max-width: 600px) {
-            .project-summary {
-                font-size: 0.95rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Projects</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #0e0e10;
+        color: #e0e0e0;
+        margin: 0;
+        padding: 20px;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #ffcc00;
+    }
+    .projects-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: auto;
+    }
+    .project-card {
+        background: #1a1a1d;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        transition: transform 0.2s ease;
+    }
+    .project-card:hover {
+        transform: scale(1.02);
+    }
+    .project-title {
+        font-size: 1.4em;
+        color: #ffcc00;
+        margin-bottom: 10px;
+    }
+    .project-info {
+        font-size: 0.95em;
+        line-height: 1.5em;
+    }
+    .label {
+        color: #888;
+        font-weight: bold;
+    }
+    a {
+        color: #4da6ff;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
 </head>
-
 <body>
-    <header>
-        <h1>F1nn's Project Portfolio</h1>
-        <p>Click any project below to view full details, contributors, features, and more.</p>
-    </header>
 
-    <main>
-        <div class="project-summary" onclick="toggleProject('gleam-box')">Gleam Box</div>
-        <div id="gleam-box" class="project-detail">
-            <h2>Gleam Box</h2>
-            <p><strong>Description:</strong> A one-tap rhythmic runner game merging Flappy Bird, Snake, and Stardew
-                Valley's fishing minigame.</p>
-            <ul>
-                <li><strong>Game Jam:</strong> UDC Game Jam #34</li>
-                <li><strong>Theme:</strong> Three Modes = Three Colors</li>
-                <li><strong>Features:</strong> Multi-input support, Discord Rich Presence, leaderboard, FPS monitor,
-                    upgrade shop</li>
-                <li><strong>External Assets:</strong> Duet theme (Tim Shiell), Discord SDK, Leaderboard Creator</li>
-                <li><strong>Collaborators:</strong> Muhammad Ali (90%), Finn Nijpels (8%), Blackbelt_mfer (2%)</li>
-                <li><strong>Released:</strong> Jun 14, 2025</li>
-                <li><strong>Platforms:</strong> Itch.io, Google Play, Unity Web</li>
-            </ul>
+<h1>My Projects</h1>
+<div class="projects-container" id="projectsContainer">
+    <!-- Cards will be generated here -->
+</div>
+
+<script>
+// Example projects data
+const projects = [
+    {
+        title: "Gleam Box",
+        description: "A one-tap rhythmic runner game merging Flappy Bird, Snake, and Stardew Valley's fishing minigame.",
+        gameJam: "UDC Game Jam #34",
+        theme: "Three Modes = Three Colors",
+        features: "Multi-input support, Discord Rich Presence, leaderboard, FPS monitor, upgrade shop",
+        assets: "Duet theme (Tim Shiell), Discord SDK, Leaderboard Creator",
+        collaborators: "Muhammad Ali (90%), Finn Nijpels (8%), Blackbelt_mfer (2%)",
+        released: "Jun 14, 2025",
+        platforms: "Itch.io, Google Play, Unity Web"
+    },
+    // Add up to 15 projects here
+];
+
+function createProjectCard(project) {
+    return `
+        <div class="project-card">
+            <div class="project-title">${project.title}</div>
+            <div class="project-info"><span class="label">Description:</span> ${project.description}</div>
+            <div class="project-info"><span class="label">Game Jam:</span> ${project.gameJam}</div>
+            <div class="project-info"><span class="label">Theme:</span> ${project.theme}</div>
+            <div class="project-info"><span class="label">Features:</span> ${project.features}</div>
+            <div class="project-info"><span class="label">External Assets:</span> ${project.assets}</div>
+            <div class="project-info"><span class="label">Collaborators:</span> ${project.collaborators}</div>
+            <div class="project-info"><span class="label">Released:</span> ${project.released}</div>
+            <div class="project-info"><span class="label">Platforms:</span> ${project.platforms}</div>
         </div>
+    `;
+}
 
-        <!-- Add more project summaries and details similarly -->
+document.getElementById("projectsContainer").innerHTML = projects.map(createProjectCard).join("");
+</script>
 
-    </main>
-
-    <footer>
-        <p>&copy; 2025 F1nn. All rights reserved.</p>
-    </footer>
-
-    <script>
-        function toggleProject(id) {
-            const detail = document.getElementById(id);
-            detail.classList.toggle('active');
-        }
-    </script>
 </body>
-
 </html>
